@@ -1,0 +1,113 @@
+.store-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.store-map__canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.store-map__state {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(246, 247, 241, 0.86);
+  color: var(--color-ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.store-map__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.store-map__marker-label {
+  padding: 5px 9px;
+  border: 1px solid rgba(0, 75, 30, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 254, 249, 0.96);
+  box-shadow: 0 7px 20px rgba(0, 75, 30, 0.14);
+  color: var(--color-primary-dark);
+  font: 800 11px/1 var(--font-body);
+  white-space: nowrap;
+}
+
+.store-map__pin {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  background: var(--color-primary-dark);
+  box-shadow: 0 10px 24px rgba(0, 75, 30, 0.3);
+  transform: rotate(-45deg);
+  transition: transform var(--transition-fast);
+}
+
+.store-map__pin-core {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-lime);
+}
+
+.store-map__marker:hover .store-map__pin,
+.store-map__marker:focus-visible .store-map__pin {
+  transform: rotate(-45deg) scale(1.08);
+}
+
+.store-map__marker:focus-visible {
+  outline: 3px solid var(--color-lime);
+  outline-offset: 5px;
+}
+
+.store-map__popup {
+  display: grid;
+  gap: 5px;
+  padding: 4px 2px;
+  color: var(--color-ink);
+}
+
+.store-map__popup strong {
+  color: var(--color-primary-dark);
+  font-size: 13px;
+}
+
+.store-map__popup span {
+  max-width: 32ch;
+  color: var(--color-ink-soft);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.store-map .maplibregl-popup-content {
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.store-map .maplibregl-ctrl-attrib {
+  font-size: 9px;
+}
+
+@media (max-width: 620px) {
+  .store-map {
+    min-height: 330px;
+  }
+}

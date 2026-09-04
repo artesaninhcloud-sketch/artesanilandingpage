@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "artesani-api",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-08-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "artesani-db",
+      "database_id": "7eb7817c-feb1-4faf-9f08-14ecec1909d0",
+    },
+  ],
+}

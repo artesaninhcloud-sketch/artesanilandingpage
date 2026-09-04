@@ -1,0 +1,45 @@
+.about { padding: 112px 0 120px; overflow: hidden; }
+.about .section-head { margin-bottom: 42px; }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.about__text { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; max-width: 64ch; }
+.about__text p { font-size: 15px; line-height: 1.8; color: var(--color-ink-soft); }
+.about__text strong { color: var(--color-ink); }
+.about__text em { font-style: normal; color: var(--color-primary-dark); font-weight: 800; }
+.about__text .btn { margin-top: 6px; }
+
+.about__side { position: relative; display: flex; flex-direction: column; gap: 0; }
+.about__side::before { content: ''; position: absolute; width: 72%; height: 74%; right: -7%; top: -7%; border-radius: 50%; background: rgba(0, 156, 59, 0.12); z-index: -1; }
+.about__photo { overflow: hidden; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
+.about__photo img { width: 100%; aspect-ratio: 1.12 / 1; object-fit: cover; object-position: center 15%; }
+
+.about__stats {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 28px);
+  margin: -42px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--color-primary-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.about__stat { min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 4px; padding: 16px 10px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.about__stat strong { font-family: var(--font-heading); font-size: 25px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+.about__stat span { max-width: 18ch; font-size: 10px; color: rgba(255, 255, 255, 0.7); line-height: 1.4; }
+
+@media (min-width: 900px) {
+  .about__grid { grid-template-columns: 0.86fr 1.14fr; gap: 76px; }
+  .about__side { order: -1; }
+  .about__stats { grid-template-columns: repeat(4, 1fr); width: calc(100% - 48px); }
+}
+
+@media (max-width: 620px) { .about { padding: 82px 0 92px; } }

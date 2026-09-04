@@ -1,0 +1,14 @@
+.location { padding: 112px 0 120px; background: var(--color-surface); border-top: 1px solid var(--color-border); }
+.location__grid { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: stretch; }
+.location__info { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 18px; padding: 8px 0; }
+.location__info h2 { max-width: 10ch; font-size: clamp(2.15rem, 4vw, 3.5rem); color: var(--color-ink); }
+.location__list { display: flex; flex-direction: column; gap: 18px; width: 100%; }
+.location__list li { display: flex; align-items: flex-start; gap: 13px; }
+.location__list svg { flex-shrink: 0; color: var(--color-primary); margin-top: 2px; }
+.location__list strong { display: block; font-size: 12px; color: var(--color-ink); margin-bottom: 3px; }
+.location__list span { display: block; max-width: 42ch; font-size: 13px; color: var(--color-ink-soft); line-height: 1.6; }
+.location__map { width: 100%; min-height: 420px; border-radius: var(--radius-xl); overflow: hidden; border: 10px solid var(--color-bg); box-shadow: var(--shadow-md); }
+.location__map-loading { display: grid; min-height: 420px; place-items: center; padding: 24px; background: var(--color-bg); color: var(--color-ink-soft); font-size: 13px; font-weight: 700; text-align: center; }
+
+@media (min-width: 900px) { .location__grid { grid-template-columns: 0.78fr 1.22fr; gap: 60px; } }
+@media (max-width: 620px) { .location { padding: 84px 0 92px; } .location__map, .location__map-loading { min-height: 330px; } }

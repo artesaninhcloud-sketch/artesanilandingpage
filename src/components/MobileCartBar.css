@@ -1,0 +1,7 @@
+.mobile-cart-bar { position: fixed; left: 10px; right: 10px; bottom: max(10px, env(safe-area-inset-bottom)); z-index: 45; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 14px; background: rgba(255, 254, 249, 0.96); backdrop-filter: blur(14px); border: 1px solid var(--color-border); border-radius: 18px; box-shadow: var(--shadow-lg); animation: bar-slide var(--transition-base); }
+@keyframes bar-slide { from { transform: translateY(calc(100% + 20px)); } to { transform: translateY(0); } }
+.mobile-cart-bar__info { display: flex; flex-direction: column; line-height: 1.2; flex-shrink: 0; }
+.mobile-cart-bar__info span { font-size: 10px; color: var(--color-ink-soft); }
+.mobile-cart-bar__info strong { font-family: var(--font-heading); font-size: 17px; color: var(--color-ink); font-variant-numeric: tabular-nums; }
+.mobile-cart-bar .btn { min-height: 44px; padding: 10px 14px; font-size: 11px; flex: 1; max-width: 220px; }
+@media (min-width: 860px) { .mobile-cart-bar { display: none; } }

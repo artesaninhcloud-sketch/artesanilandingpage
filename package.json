@@ -1,0 +1,38 @@
+{
+  "name": "landing-page-farmacia",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "test": "vitest run",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "worker:dev": "wrangler dev",
+    "worker:deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute artesani-db --local --file=./migrations/0001_create_products.sql",
+    "db:migrate:remote": "wrangler d1 execute artesani-db --remote --file=./migrations/0001_create_products.sql",
+    "db:seed:local": "wrangler d1 execute artesani-db --local --file=./seed.sql",
+    "db:seed:remote": "wrangler d1 execute artesani-db --remote --file=./seed.sql"
+  },
+  "dependencies": {
+    "lucide-react": "^1.32.0",
+    "maplibre-gl": "^6.6.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "jsdom": "^30.0.1",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.0.0"
+  }
+}
